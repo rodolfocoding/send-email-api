@@ -5,3 +5,4 @@ API Requiriments
   - Name has to be valid
 2. E-mail user with bonus.
 
+
