@@ -26,9 +26,9 @@ describe('Email valdiation', () => {
   })
 
   it('should not accpet local part than 64 chars', () => {
-    const email = 'l'.repeat(65) + '@mail.com'
+    const local = 'l'.repeat(65) + '@mail.com'
 
-    expect(Email.validate(email)).toBeFalsy()
+    expect(Email.validate(local)).toBeFalsy()
   })
 
   it('should not accpet email larger than 320 chars', () => {
@@ -38,7 +38,13 @@ describe('Email valdiation', () => {
   })
 
   it('should not domain part larger than 255 chars', () => {
-    const email = 'local@' + 'd'.repeat(128) + '.' + 'd'.repeat(127)
-    expect(Email.validate(email)).toBeFalsy()
+    const domain = 'local@' + 'd'.repeat(128) + '.' + 'd'.repeat(127)
+    expect(Email.validate(domain)).toBeFalsy()
+  })
+
+  it('should not accpet empty local party', () => {
+    const local = '@mail.com'
+
+    expect(Email.validate(local)).toBeFalsy()
   })
 })
