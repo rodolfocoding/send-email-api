@@ -59,4 +59,10 @@ describe('Email valdiation', () => {
 
     expect(Email.validate(domain)).toBeFalsy()
   })
+
+  it('should not accept local part with invalid char', () => {
+    const domain = 'any email@email.com'
+
+    expect(Email.validate(domain)).toBeFalsy()
+  })
 })
