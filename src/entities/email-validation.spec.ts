@@ -65,4 +65,16 @@ describe('Email valdiation', () => {
 
     expect(Email.validate(domain)).toBeFalsy()
   })
+
+  it('should not accept local part with two dots', () => {
+    const domain = 'any..email@email.com'
+
+    expect(Email.validate(domain)).toBeFalsy()
+  })
+
+  it('should not accept local part with init dots', () => {
+    const domain = '.any.email@email.com'
+
+    expect(Email.validate(domain)).toBeFalsy()
+  })
 })
