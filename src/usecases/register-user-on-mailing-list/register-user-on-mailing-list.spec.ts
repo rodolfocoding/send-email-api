@@ -1,9 +1,9 @@
-import { UserData } from "./user-data";
+import { UserData } from '@/entities/user-data'
 
-describe("Register user on mailing list use case", () => {
-  test("should add user with complete data to mailing list", async () => {
-    const users: UserData[] = [];
-    console.log(users);
+describe('Register user on mailing list use case', () => {
+  test('should add user with complete data to mailing list', async () => {
+    const users: UserData[] = []
+    console.log(users)
     // const repo: UserRepository = new InMemoryUserRepository(users);
     // const useCase: RegisterUserOnMailingList = new RegisterUserOnMailingList(
     //   repo
@@ -17,5 +17,5 @@ describe("Register user on mailing list use case", () => {
     // const user = repo.findUserByEmail("any@email.com");
 
     // expect(await user.name).toBe("any_name");
-  });
-});
+  })
+})
