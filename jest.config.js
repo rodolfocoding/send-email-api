@@ -1,18 +1,18 @@
 module.exports = {
   preset: '@shelf/jest-mongodb',
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/test'],
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
-    '!**/src/**',
+    '<rootDir>/test/**/*.ts',
+    '!**/test/**',
     '!**/config/**'
   ],
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@test/(.*)$': '<rootDir>/src/**/*.spec.ts'
+    '^@/(.*)$': '<rootDir>/test/**',
+    '^@test/(.*)$': '<rootDir>/test/*.spec.ts'
   },
   setupFiles: ['dotenv/config']
 }
